@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Project Gallery | Zee Venture</title>
+    <meta name="description" content="Explore Zee Venture's residential interiors, commercial projects and waterproofing work across India.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-container">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Zee Venture Logo">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation">☰</button>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+
+                <div class="nav-dropdown">
+                    <a href="services.html" class="dropdown-toggle">
+                        Our Services ▾
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="services.html#residential">Residential Interiors</a>
+                        <a href="services.html#commercial">Commercial Projects</a>
+                        <a href="services.html#waterproofing">Waterproofing</a>
+                    </div>
+                </div>
+
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contact.html">Contact Us</a>
+
+                <a href="contact.html#contact-form" class="nav-quote">
+                    Get a Quote
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- GALLERY HERO -->
+    <section class="gallery-hero"
+    style="background-image: linear-gradient(rgba(15,25,48,0.55), rgba(15,25,48,0.70)), url('images/mywork/residential/15.jpeg');">
+        <div class="gallery-hero-content">
+            <span class="gallery-eyebrow">OUR PORTFOLIO</span>
+
+            <h1>Spaces That Inspire.<br>
+                Designs That Last.</h1>
+
+            <p>
+                Explore our work across residential interiors,
+                commercial spaces and waterproofing solutions.
+            </p>
+
+            <a href="#project-gallery" class="gallery-hero-btn">
+                Explore Our Projects ↓
+            </a>
+        </div>
+    </section>
+
+
+    <!-- GALLERY INTRO -->
+    <section class="gallery-intro">
+        <span class="gallery-label">A LOOK AT OUR WORK</span>
+
+        <h2>Every Project Has a Story</h2>
+
+        <p>
+            From thoughtfully designed interiors to commercial
+            spaces and waterproofing applications, explore
+            the work we do at Zee Venture.
+        </p>
+    </section>
+
+
+    <!-- PROJECT GALLERY -->
+    <section class="gallery-main" id="project-gallery">
+
+        <div class="gallery-filters">
+            <button class="gallery-filter active" data-filter="all">
+                All Projects
+            </button>
+
+            <button class="gallery-filter" data-filter="residential">
+                Residential
+            </button>
+
+            <button class="gallery-filter" data-filter="commercial">
+                Commercial
+            </button>
+
+            <button class="gallery-filter" data-filter="waterproofing">
+                Waterproofing
+            </button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+            <!-- Project cards are created from your image folders -->
+        </div>
+
+    </section>
+
+<!-- FULL SCREEN IMAGE VIEWER -->
+<div class="lightbox" id="galleryLightbox">
+
+    <button class="lightbox-close" id="lightboxClose"
+        aria-label="Close image">&times;</button>
+
+    <button class="lightbox-prev" id="lightboxPrev"
+        aria-label="Previous image">&#10094;</button>
+
+    <div class="lightbox-content">
+        <img src="" alt="Full size project image" id="lightboxImage">
+        <p id="lightboxCaption"></p>
+    </div>
+
+    <button class="lightbox-next" id="lightboxNext"
+        aria-label="Next image">&#10095;</button>
+
+</div>
+
+
+
+    <!-- ENQUIRY CTA -->
+    <section class="gallery-cta">
+        <div class="gallery-cta-content">
+            <span>LET'S BUILD SOMETHING TOGETHER</span>
+
+            <h2>Inspired by What You See?</h2>
+
+            <p>
+                Have a space you'd like to transform?
+                Let's discuss your next project.
+            </p>
+
+            <a href="https://wa.me/917406331018"
+               target="_blank"
+               rel="noopener"
+               class="gallery-cta-btn">
+                Discuss Your Project
+            </a>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Zee Venture. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+    <!-- GALLERY IMAGE AND FILTER SCRIPT -->
+    <script>
+        
+const projectGrid = document.getElementById("projectGrid");
+
+const projectFolders = [
+    {
+        category: "residential",
+        folder: "images/mywork/residential/",
+        count: 28,
+        title: "Residential Interior"
+    },
+    {
+        category: "commercial",
+        folder: "images/mywork/commercial/",
+        count: 19,
+        title: "Commercial Project"
+    },
+    {
+        category: "waterproofing",
+        folder: "images/mywork/waterproofing and fixtures/",
+        count: 20,
+        title: "Waterproofing Project"
+    }
+];
+
+function createProjectCards(filter = "all") {
+    projectGrid.innerHTML = "";
+
+    projectFolders.forEach(category => {
+        if (filter !== "all" && filter !== category.category) {
+            return;
+        }
+
+        for (let i = 1; i <= category.count; i++) {
+            const card = document.createElement("article");
+            card.className = "project-card";
+
+            const imagePath = category.folder + i + ".jpeg";
+
+            card.innerHTML = `
+                <div class="project-image-wrap">
+                    <img
+                        src="${imagePath}"
+                        alt="${category.title} ${i}"
+                        loading="lazy"
+                    >
+
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <span>${category.title}</span>
+                            <h3>Project ${String(i).padStart(2, "0")}</h3>
+                            <p>View Project ↗</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const img = card.querySelector("img");
+
+            img.addEventListener("error", () => {
+                card.remove();
+            });
+
+            projectGrid.appendChild(card);
+        }
+    });
+}
+
+createProjectCards();
+
+document.querySelectorAll(".gallery-filter").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".gallery-filter").forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        createProjectCards(button.dataset.filter);
+    });
+});
+
+    </script>
+
+</body>
+</html>

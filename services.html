@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Services | Zee Venture</title>
+    <meta name="description" content="Explore Zee Venture residential interiors, commercial projects and waterproofing solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: #f7f8f5;
+        }
+
+        .services-banner {
+            min-height: 390px;
+            background: linear-gradient(120deg, #293B86, #192957);
+            display: flex;
+            align-items: center;
+            padding: 75px 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-banner-content {
+            max-width: 750px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-banner-content .tag {
+            color: #b6cf8d;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .services-banner h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.2;
+            margin: 0 0 20px;
+            font-weight: 800;
+        }
+
+        .services-banner p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #e2e6f3;
+        }
+
+        .service-category {
+            padding: 75px 0;
+            scroll-margin-top: 100px;
+        }
+
+        .service-category:nth-of-type(even) {
+            background: #ffffff;
+        }
+
+        .category-heading {
+            width: 88%;
+            max-width: 1450px;
+            margin: 0 auto 40px;
+        }
+
+        .category-heading .tag {
+            color: #789C49;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .category-heading h2 {
+            color: #293B86;
+            font-size: 34px;
+            margin: 12px 0;
+            font-weight: 800;
+        }
+
+        .category-heading p {
+            color: #696d68;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .service-gallery-grid {
+            width: 88%;
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .service-detail-card {
+            background: #ffffff;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-detail-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.13);
+        }
+
+        .service-detail-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            background: #e8e8e8;
+        }
+
+        .service-detail-info {
+            padding: 20px 22px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 220px;
+        }
+
+        .service-detail-info h3 {
+            color: #293B86;
+            font-size: 18px;
+            font-weight: 800;
+            margin: 0 0 12px;
+            line-height: 1.45;
+        }
+
+        .service-detail-info p {
+            color: #696d68;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0 0 25px;
+        }
+
+        .service-detail-info a {
+            color: #45643A;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 800;
+            margin-top: auto;
+            transition: color 0.3s ease;
+        }
+
+        .service-detail-info a:hover {
+            color: #293B86;
+        }
+
+        .service-cta {
+            background: #293B86;
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .service-cta .tag {
+            color: #b6cf8d;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .service-cta h2 {
+            font-size: 36px;
+            margin: 18px 0;
+        }
+
+        .service-cta p {
+            color: #e2e6f3;
+            line-height: 1.8;
+        }
+
+        .service-cta a {
+            display: inline-block;
+            background: #789C49;
+            color: white;
+            padding: 15px 30px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1100px) {
+            .service-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-banner {
+                min-height: 330px;
+                padding: 55px 6%;
+            }
+
+            .service-category {
+                padding: 50px 0;
+            }
+
+            .service-gallery-grid {
+                grid-template-columns: 1fr;
+                width: 90%;
+                gap: 22px;
+            }
+
+            .category-heading {
+                width: 90%;
+            }
+
+            .category-heading h2 {
+                font-size: 27px;
+            }
+
+            .service-detail-card img {
+                height: 230px;
+            }
+
+            .service-detail-info {
+                min-height: 190px;
+            }
+
+            .service-cta h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+   
+<header class="site-header">
+    <div class="container header-container">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Zee Venture Logo">
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+
+            <div class="nav-dropdown">
+                <a href="services.html" class="dropdown-toggle active">
+                    Our Services ▾
+                </a>
+
+                <div class="dropdown-menu">
+                    <a href="services.html#residential">Residential Interiors</a>
+                    <a href="services.html#commercial">Commercial Projects</a>
+                    <a href="services.html#waterproofing">Waterproofing</a>
+                </div>
+            </div>
+
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html#contact-form" class="nav-quote">Get a Quote</a>
+        </nav>
+
+    </div>
+</header>
+
+
+    <!-- PAGE BANNER -->
+    <section class="services-banner">
+        <div class="services-banner-content">
+            <p class="tag">WHAT WE OFFER</p>
+
+            <h1>
+                Our Services.<br>
+                Your Complete Solutions.
+            </h1>
+
+            <p>
+                From beautiful residential interiors to complete
+                commercial projects and reliable waterproofing,
+                Zee Venture delivers solutions for every space.
+            </p>
+        </div>
+    </section>
+
+    <!-- RESIDENTIAL SERVICES -->
+    <section class="service-category" id="residential">
+
+        <div class="category-heading">
+            <span class="tag">01 / RESIDENTIAL</span>
+            <h2>Residential Interior Design</h2>
+            <p>
+                Transform your house into a beautiful home with
+                thoughtfully designed interiors that combine
+                comfort, functionality and elegance.
+            </p>
+        </div>
+
+        <div class="service-gallery-grid">
+
+            <div class="service-detail-card">
+                <img src="images/i1.jpeg" alt="Living room interior design" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Living Room Interior Design</h3>
+                    <p>Stylish living room interiors blending comfort, elegance, and modern design.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i8.jpeg" alt="Modern bedroom design" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Modern Luxury Bedroom Designs</h3>
+                    <p>Elegant bedroom designs blending modern style, luxury, and comfort.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i11.jpeg" alt="Modular kitchen design" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Modular Kitchen Design</h3>
+                    <p>Modern modular kitchens combining style, functionality, and elegance.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i14.jpeg" alt="Wardrobe design" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Wardrobe Design</h3>
+                    <p>Modern wardrobe designs combining style, storage, and functionality.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i16.jpeg" alt="TV panel interior design" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>TV Panel Design</h3>
+                    <p>Stylish TV panels adding elegance and character to your living room.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i18.jpeg" alt="False ceiling design" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>False Ceiling</h3>
+                    <p>Elegant ceiling designs enhancing your space with modern style.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i7.jpeg" alt="Wood baffle ceiling" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Wood Baffle Ceiling</h3>
+                    <p>Stylish wood baffle ceilings adding warmth and modern elegance.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/s1.jpeg" alt="Staircase wall design" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Staircase Wall Design</h3>
+                    <p>Elegant staircase wall designs enhancing your interiors with style and charm.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMMERCIAL SERVICES -->
+    <section class="service-category" id="commercial">
+
+        <div class="category-heading">
+            <span class="tag">02 / COMMERCIAL</span>
+            <h2>Commercial Services</h2>
+            <p>
+                Professional solutions for offices, retail outlets,
+                showrooms and all types of commercial spaces.
+            </p>
+        </div>
+
+        <div class="service-gallery-grid">
+
+            <div class="service-detail-card">
+                <img src="images/i22.jpeg" alt="Office interior solutions" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Office Interior Solutions</h3>
+                    <p>Functional and professional office spaces designed to support productivity and style.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i23.jpeg" alt="Commercial workspace" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Commercial Spaces</h3>
+                    <p>Practical and attractive interiors for all types of commercial environments.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/r1.jpeg" alt="Retail shop interior" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Retail Shops & Showrooms</h3>
+                    <p>Attractive retail environments designed to showcase your brand and products.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/r2.jpeg" alt="Commercial interior project" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Renovations & Fit-outs</h3>
+                    <p>Complete interior fit-out and renovation solutions tailored to your business requirements.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WATERPROOFING SERVICES -->
+    <section class="service-category" id="waterproofing">
+
+        <div class="category-heading">
+            <span class="tag">03 / WATERPROOFING</span>
+            <h2>Waterproofing Solutions</h2>
+            <p>
+                Protect your property with dependable waterproofing
+                solutions designed to prevent leakage, seepage
+                and moisture damage.
+            </p>
+        </div>
+
+        <div class="service-gallery-grid">
+
+            <div class="service-detail-card">
+                <img src="images/i20.jpeg" alt="Terrace waterproofing" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Terrace & Roof Waterproofing</h3>
+                    <p>Protect your roof and terrace from rainwater penetration and water leakage.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/w1.jpeg" alt="Waterproofing work" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Bathroom Waterproofing</h3>
+                    <p>Waterproofing solutions to help prevent bathroom leakage and moisture damage.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/i21.jpeg" alt="Roof and terrace protection" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Roof & Surface Protection</h3>
+                    <p>Protect exposed surfaces against water penetration and weather-related damage.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+            <div class="service-detail-card">
+                <img src="images/waterproofing.jpeg" alt="Water leakage treatment" loading="lazy">
+                <div class="service-detail-info">
+                    <h3>Wall Leakage & Dampness Treatment</h3>
+                    <p>Address wall seepage, damp patches and moisture-related property issues.</p>
+                    <a href="contact.html">Explore Service →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="service-cta">
+        <p class="tag">LET'S WORK TOGETHER</p>
+        <h2>Have a Project in Mind?</h2>
+        <p>
+            Let's discuss your requirements and find
+            the right solution for your property.
+        </p>
+        <a href="https://wa.me/917406331018" target="_blank" rel="noopener">
+            Enquire on WhatsApp →
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">
+            ZEE <strong>VENTURE</strong>
+        </div>
+
+        <p>
+            Interior Design | Commercial Services | Waterproofing
+        </p>
+
+        <p class="copyright">
+            © 2026 Zee Venture. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

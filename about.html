@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Zee Venture and our residential interior, commercial project and waterproofing services.">
+    <title>About Us | Zee Venture</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .page-banner {
+            background: linear-gradient(rgba(20, 32, 75, .82), rgba(20, 32, 75, .82)),
+                        url('images/24.png') center/cover;
+            padding: 90px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 12px;
+        }
+
+        .page-banner p {
+            font-size: 13px;
+            color: #e5e9f5;
+        }
+
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-intro img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-intro p {
+            color: var(--grey);
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .expertise-section {
+            background: var(--light-bg);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--olive);
+        }
+
+        .expertise-card h3 {
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .expertise-card p {
+            color: var(--grey);
+            font-size: 12px;
+        }
+
+        .approach-section {
+            background: white;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .approach-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .approach-card span {
+            color: var(--olive);
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        .approach-card h3 {
+            color: var(--navy);
+            font-size: 15px;
+            margin: 10px 0;
+        }
+
+        .approach-card p {
+            color: var(--grey);
+            font-size: 11px;
+        }
+
+        .video-section {
+            background: var(--light-bg);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .video-placeholder {
+            min-height: 210px;
+            background: #e9ecf3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .video-placeholder span {
+            display: block;
+            font-size: 42px;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .video-info {
+            padding: 22px;
+        }
+
+        .video-info h3 {
+            color: var(--navy);
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .video-info p {
+            font-size: 11px;
+            color: var(--grey);
+        }
+
+        .video-info a {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--olive);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .reference-note {
+            margin-top: 25px;
+            color: var(--grey);
+            font-size: 11px;
+            text-align: center;
+        }
+
+        @media(max-width: 800px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .about-intro img {
+                height: 320px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+    <div class="container header-container">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Zee Venture Logo">
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Us</a>
+
+            <div class="nav-dropdown">
+                <a href="services.html" class="dropdown-toggle">Our Services ▾</a>
+                <div class="dropdown-menu">
+                    <a href="services.html#residential">Residential Interiors</a>
+                    <a href="services.html#commercial">Commercial Projects</a>
+                    <a href="services.html#waterproofing">Waterproofing</a>
+                </div>
+            </div>
+
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html#contact-form" class="nav-quote">Get a Quote</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- PAGE BANNER -->
+
+<section class="page-banner">
+    <div class="container">
+        <p class="section-tag">GET TO KNOW US</p>
+        <h1>About Zee Venture</h1>
+        <p>Thoughtful spaces. Practical solutions. Work that matters.</p>
+    </div>
+</section>
+
+
+<!-- INTRODUCTION -->
+
+<section class="section-padding">
+    <div class="container about-intro">
+
+        <div>
+            <p class="section-tag">WHO WE ARE</p>
+            <h2 style="color:var(--navy);font-size:34px;line-height:1.3;margin-bottom:20px;">
+                Creating Spaces That Work for You
+            </h2>
+
+            <p>
+                Zee Venture works across residential interior design,
+                commercial projects and waterproofing services.
+            </p>
+
+            <p>
+                Whether it is designing a comfortable home, developing
+                a functional business space or protecting a property
+                against water leakage, our focus is on understanding
+                the requirements of every project.
+            </p>
+
+            <p>
+                We believe that every project deserves careful planning,
+                suitable solutions and attention to detail.
+            </p>
+
+            <a href="services.html" class="btn btn-primary">
+                Explore Our Services
+            </a>
+        </div>
+
+        <div>
+            <img src="images/i8.jpeg" alt="Luxury bedroom interior design">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- OUR EXPERTISE -->
+
+<section class="expertise-section section-padding">
+    <div class="container">
+
+        <div class="section-heading">
+            <p class="section-tag">OUR EXPERTISE</p>
+            <h2>What We Do</h2>
+            <p>Three areas of work, with solutions suited to your requirements.</p>
+        </div>
+
+        <div class="expertise-grid">
+
+            <div class="expertise-card">
+                <h3>Residential Interior Design</h3>
+                <p>
+                    Home interior solutions covering living rooms,
+                    bedrooms, modular kitchens, wardrobes, ceilings
+                    and other interior spaces.
+                </p>
+            </div>
+
+            <div class="expertise-card">
+                <h3>Commercial Projects</h3>
+                <p>
+                    Commercial work including retail shops,
+                    showrooms, office spaces, renovations and
+                    commercial fit-outs.
+                </p>
+            </div>
+
+            <div class="expertise-card">
+                <h3>Waterproofing Services</h3>
+                <p>
+                    Waterproofing solutions for areas that require
+                    protection from water seepage and leakage,
+                    including terraces and bathrooms.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- OUR APPROACH -->
+
+<section class="approach-section section-padding">
+    <div class="container">
+
+        <div class="section-heading">
+            <p class="section-tag">OUR APPROACH</p>
+            <h2>How We Work</h2>
+            <p>A clear process helps us understand and address your project needs.</p>
+        </div>
+
+        <div class="approach-grid">
+
+            <div class="approach-card">
+                <span>01</span>
+                <h3>Understanding</h3>
+                <p>We learn about your ideas, space and project requirements.</p>
+            </div>
+
+            <div class="approach-card">
+                <span>02</span>
+                <h3>Planning</h3>
+                <p>We discuss suitable solutions and the scope of work.</p>
+            </div>
+
+            <div class="approach-card">
+                <span>03</span>
+                <h3>Execution</h3>
+                <p>The agreed work is carried out according to the project plan.</p>
+            </div>
+
+            <div class="approach-card">
+                <span>04</span>
+                <h3>Completion</h3>
+                <p>We work towards completing the agreed project requirements.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- RELATED VIDEOS -->
+
+<section class="video-section section-padding">
+    <div class="container">
+
+        <div class="section-heading">
+            <p class="section-tag">WATCH & EXPLORE</p>
+            <h2>Ideas and Inspiration</h2>
+            <p>Explore interior design and waterproofing videos.</p>
+        </div>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+                <div class="video-player">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/tNjEOEXTl64"
+                        title="Modern Home Interior Design"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Modern Home Interior Designs</h3>
+                    <p>Interior design inspiration and home walkthrough.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-player">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/4XSfqW79Rhs"
+                        title="Terrace Waterproofing Preparation"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Terrace Waterproofing Preparation</h3>
+                    <p>Reference video about exterior and terrace waterproofing.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-player">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/ZlQNkSHGYB0"
+                        title="Terrace Waterproofing Treatment"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Waterproofing Treatment</h3>
+                    <p>Reference video showing a terrace waterproofing process.</p>
+                </div>
+            </div>
+
+           
+<div class="video-card">
+    <div class="video-player">
+        <iframe
+            src="https://www.youtube-nocookie.com/embed/aF5fxMbCFH8"
+            title="Commercial Office Interior Fit-out Walkthrough"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="video-info">
+        <h3>Commercial Interiors & Fit-outs</h3>
+        <p>
+            Reference video showing an office interior fit-out
+            and commercial workspace transformation.
+        </p>
+    </div>
+</div>
+
+
+        </div>
+
+        <p class="reference-note">
+            These are third-party reference videos, not videos of Zee Venture's
+            own completed projects.
+        </p>
+
+    </div>
+</section>
+
+
+
+<!-- CONTACT CTA -->
+
+<section class="cta-section">
+    <div class="container cta-content">
+
+        <div>
+            <p class="section-tag">LET'S CONNECT</p>
+            <h2>Have a Project in Mind?</h2>
+            <p>Get in touch with Zee Venture to discuss your requirements.</p>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-light">Contact Us</a>
+
+            <a href="https://wa.me/917406331018"
+               target="_blank"
+               rel="noopener"
+               class="btn btn-whatsapp">
+                WhatsApp Us
+            </a>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+
+        <div class="footer-about">
+            <img src="images/logo.png" alt="Zee Venture Logo">
+            <p>
+                Residential interior design, commercial projects
+                and waterproofing solutions.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-services">
+            <h3>Our Services</h3>
+            <a href="services.html#residential">Residential Interiors</a>
+            <a href="services.html#commercial">Commercial Projects</a>
+            <a href="services.html#waterproofing">Waterproofing</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Get in Touch</h3>
+            <p>Contact us for your project enquiries.</p>
+            <a href="https://wa.me/917406331018" target="_blank" rel="noopener">
+                WhatsApp: +91 74063 31018
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Zee Venture. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
