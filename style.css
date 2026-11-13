@@ -2217,3 +2217,46 @@ button {
         font-size: 21px;
     }
 }
+
+
+/* GALLERY HERO TEXT - NAVY BLUE, NO WHITE BOXES */
+
+.gallery-hero-content,
+.gallery-hero-content h1,
+.gallery-hero-content p,
+.gallery-hero-eyebrow,
+.gallery-hero-btn {
+    color: #192957 !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    border-radius: 0 !important;
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.95),
+        0 0 12px rgba(255, 255, 255, 0.85) !important;
+}
+
+/* OUR PORTFOLIO */
+.gallery-hero-eyebrow {
+    color: #192957 !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+}
+
+/* MAIN GALLERY HEADING */
+.gallery-hero-content h1 {
+    color: #192957 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* GALLERY DESCRIPTION */
+.gallery-hero-content p {
+    color: #192957 !important;
+}
+
+/* EXPLORE OUR PROJECTS */
+.gallery-hero-btn {
+    color: #192957 !important;
+    background: transparent !important;
+}
