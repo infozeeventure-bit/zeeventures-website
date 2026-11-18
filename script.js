@@ -1,6 +1,6 @@
 
 /* =========================================
-   ZEE VENTURE - WEBSITE JAVASCRIPT
+   ZEE VENTURES - WEBSITE JAVASCRIPT
    CORRECTED VERSION
 ========================================= */
 
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (lightboxCaption) {
 
                 lightboxCaption.textContent =
-                    selectedImage.alt || "Zee Venture Project";
+                    selectedImage.alt || "Zee Ventures Project";
             }
 
             lightbox.classList.add("active");
