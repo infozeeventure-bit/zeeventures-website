@@ -15,50 +15,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentSlide = 0;
     let slideTimer;
+    let requestedSlide = 0;
 
-    function showSlide(index) {
+    function loadSlideImage(slide) {
+        if (!slide.dataset.image) return Promise.resolve();
 
-        if (!slides.length) return;
+        const source = slide.dataset.image;
+        const image = new Image();
+        image.src = source;
 
-        currentSlide =
-            ((index % slides.length) + slides.length) % slides.length;
+        return image.decode().then(() => {
+            slide.style.backgroundImage = `url("${source}")`;
+            delete slide.dataset.image;
+        });
+    }
 
+    async function showSlide(index) {
+        const next = (index + slides.length) % slides.length;
+        const request = ++requestedSlide;
+
+        try {
+            await loadSlideImage(slides[next]);
+        } catch {
+            return;
+        }
+
+        if (request !== requestedSlide) return;
+
+        currentSlide = next;
         slides.forEach((slide, i) => {
             slide.classList.toggle("active", i === currentSlide);
         });
-
         dots.forEach((dot, i) => {
             dot.classList.toggle("active", i === currentSlide);
         });
     }
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
     function startSlideshow() {
-
         clearInterval(slideTimer);
-
         if (slides.length > 1) {
-            slideTimer = setInterval(nextSlide, 5000);
+            slideTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
         }
     }
 
     dots.forEach((dot, index) => {
-
-        dot.addEventListener("click", function () {
+        dot.addEventListener("click", () => {
             showSlide(index);
             startSlideshow();
         });
-
     });
 
-    if (slides.length) {
-        showSlide(0);
-        startSlideshow();
+    if (slides.length > 1) {
+        const firstImage = slides[0];
+        if (firstImage.complete) {
+            startSlideshow();
+        } else {
+            firstImage.addEventListener("load", startSlideshow, { once: true });
+            firstImage.addEventListener("error", startSlideshow, { once: true });
+        }
     }
-
 
     /* =====================================
        2. MOBILE NAVIGATION MENU
